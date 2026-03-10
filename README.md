@@ -1,16 +1,129 @@
-# React + Vite
+# Chatalk
+A full-stack real-time chat application built using React &amp; Firebase, enabling users to communicate instantly with text messages and images. The application features secure authentication, live message synchronization, online status, and media sharing, providing a smooth and interactive messaging experience similar to modern chat platforms.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+💬 Real-Time Chat Application
 
-Currently, two official plugins are available:
+A modern Real-Time Chat Application built with React and Firebase that allows users to communicate instantly through text messages and images. The application supports live messaging, profile management, online status indicators, and media sharing, providing a smooth messaging experience similar to popular chat platforms.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The system uses Firebase Firestore for real-time database synchronization, Firebase Authentication for secure login, and Firebase Storage for media uploads.
 
-## React Compiler
+🚀 Features
+  🔐 User Authentication
+  Secure user registration and login using Firebase Authentication
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+👤 Profile Management
 
-## Expanding the ESLint configuration
+  Upload and update profile picture
+  Edit name and bio
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+💬 Real-Time Messaging
+  Send and receive messages instantly
+  Messages update in real time using Firestore listeners
+
+🖼 Image Sharing
+  Send images within conversations
+  Images stored using Firebase Storage
+
+🟢 Online Status
+  Displays user online/offline status using lastSeen timestamp
+  📁 Media Gallery
+
+Automatically displays images shared in the conversation
+  📱 Modern Chat Interface
+  Sender and receiver chat bubbles
+  Message timestamps
+  Sidebar with user profile and shared media
+
+🛠 Tech Stack
+  Frontend
+    React.js
+    React Context API
+    React Router
+    CSS
+
+  Backend / Cloud Services
+    Firebase Authentication
+    Firebase Firestore
+    Firebase Storage
+
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/yourusername/realtime-chat-app.git
+2️⃣ Navigate to Project Folder
+cd realtime-chat-app
+3️⃣ Install Dependencies
+npm install
+4️⃣ Configure Firebase
+
+Create a Firebase project and replace your configuration in:
+
+src/config/firebase.js
+
+Example configuration:
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "XXXX",
+  appId: "XXXX"
+};
+5️⃣ Start the Application
+npm run dev
+
+or
+npm start
+
+🗂 Project Structure
+src
+│
+├── assets
+│
+├── components
+│   ├── ChatBox
+│   ├── LeftSidebar
+│   ├── RightSidebar
+│
+├── pages
+│   ├── Login
+│   ├── Chat
+│   ├── ProfileUpdate
+│
+├── context
+│   └── AppContext.jsx
+│
+├── config
+│   └── firebase.js
+│
+└── lib
+    └── upload.js
+⚡ How Real-Time Messaging Works
+
+User sends a message.
+Message is stored in Firestore messages collection.
+A real-time listener (onSnapshot) detects changes.
+UI updates instantly without refreshing.
+
+🎯 Future Improvements
+      Message read receipts
+      Typing indicator
+      Group chat support
+      Push notifications
+      Emoji support
+      Message deletion
+      Voice messages
+
+📚 What I Learned
+    Through this project I gained practical experience with:
+    Real-time database systems
+    Firebase cloud services
+    State management in React
+    Building scalable chat systems
+    Handling file uploads and media storage
+
+👨‍💻 Author
+Vignesh Vinnu
+
+GitHub:
+https://github.com/Vinnu-vignesh
